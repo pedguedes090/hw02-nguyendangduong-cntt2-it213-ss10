@@ -1,0 +1,17 @@
+spring:
+    application:
+        name: hw02-nguyendangduong-cntt2-it213-ss10
+
+# ------------------------------------------------------------------
+# Cấu hình Langfuse an toàn
+# - Không hardcode key trong mã nguồn.
+# - Sử dụng placeholder ${ENV_VAR} để key được inject lúc runtime
+#   từ biến môi trường (hoặc file .env của CI/CD / server).
+# - publicKey/secretKey có thể tạo trên Langfuse Dashboard
+#   (Settings -> API Keys).
+# ------------------------------------------------------------------
+langfuse:
+    public-key: ${LANGFUSE_PUBLIC_KEY}
+    secret-key: ${LANGFUSE_SECRET_KEY}
+    base-url: ${LANGFUSE_BASE_URL:http://localhost:3000}
+    enabled: ${LANGFUSE_ENABLED:true}
